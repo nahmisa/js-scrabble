@@ -7,9 +7,19 @@ var Scrabble = function() {
 
   this.bonus_length = 7;
   this.bonus = 50;
+  this.tileBag = new TileBag();
 };
 
-
+var TileBag = function() {
+  this.default_tiles = ["a", "a", "a", "a", "a", "a", "a", "a",
+        "a", "n", "n", "n", "n", "n", "n", "b", "b", "o", "o", "o", "o", "o",
+        "o", "o", "o", "c", "c", "p", "p", "d", "d", "d", "d", "q", "e", "e",
+        "e", "e", "e", "e", "e", "e", "e", "e", "e", "e", "r", "r", "r", "r",
+        "r", "r", "f", "f", "s", "s", "s", "s", "g", "g", "g", "t", "t", "t",
+        "t", "t", "t", "h", "h", "u", "u", "u", "u", "i", "i", "i", "i", "i",
+        "i", "i", "i", "i", "v", "v", "j", "w", "w", "k", "x", "l", "l", "l",
+        "l", "y", "y", "m", "m", "z"];
+};
 
 Scrabble.prototype.score = function(word) {
   this.word = word.toLowerCase(); // lowercase input for comparing
