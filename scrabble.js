@@ -65,11 +65,20 @@ Player.prototype.play = function(word) {
   return this.scrabble.score(word);
 };
 
+Player.prototype.totalScore = function() {
+  var total = 0;
+  for(var i=0; i<this.plays.length; i++) {
+    total += this.scrabble.score(this.plays[i]);
+  }
+  return total;
+};
+
 
 var sarah = new Player("Sarah");
 console.log(sarah.play("cat"));
 console.log(sarah.play("dog"));
 console.log(sarah.plays);
+console.log(sarah.totalScore());
 // var scrabble = new Scrabble();
 // console.log(scrabble.score("cat"));
 // // console.log(word._word);
