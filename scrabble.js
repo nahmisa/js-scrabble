@@ -57,7 +57,19 @@ var Player = function(name) {
   this.plays = [];
 };
 
+Player.prototype.play = function(word) {
+  this.word = word;
+  this.plays.push(word);
+  // do we really have to make a new instance of scrabble every time???
+  scrabble = new Scrabble();
+  return scrabble.score(word);
+};
 
+
+var sarah = new Player("Sarah");
+console.log(sarah.play("cat"));
+console.log(sarah.play("dog"));
+console.log(sarah.plays);
 // var scrabble = new Scrabble();
 // console.log(scrabble.score("cat"));
 // // console.log(word._word);
