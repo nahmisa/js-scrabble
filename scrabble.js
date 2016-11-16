@@ -98,18 +98,17 @@ Player.prototype.highestWordScore = function() {
 
 
 
-var sarah = new Player("Sarah");
-console.log(sarah.play("cat"));
-console.log(sarah.play("dog"));
-console.log(sarah.plays);
-console.log(sarah.totalScore());
-console.log(sarah.play("dogssss"));
-console.log(sarah.play("dogssss"));
-
-console.log(sarah.totalScore());
-console.log(sarah.highestWordScore());
-console.log(sarah.highestScoringWord());
-console.log(sarah.play("frog"));
+// var sarah = new Player("Sarah");
+// console.log(sarah.play("cat"));
+// console.log(sarah.play("dog"));
+// console.log(sarah.plays);
+// console.log(sarah.totalScore());
+// console.log(sarah.play("dogssss"));
+// console.log(sarah.play("dogssss"));
+// console.log(sarah.totalScore());
+// console.log(sarah.highestWordScore());
+// console.log(sarah.highestScoringWord());
+// console.log(sarah.play("frog"));
 
 
 // var scrabble = new Scrabble();
@@ -119,8 +118,8 @@ console.log(sarah.play("frog"));
 // console.log(scrabble.highestScore(["dog","a","catssss"]));
 
 // YOUR CODE HERE
-Scrabble.prototype.helloWorld = function() {
-  return 'hello world!';
-};
+// Scrabble.prototype.helloWorld = function() {
+//   return 'hello world!';
+// };
 
 module.exports = Scrabble;
