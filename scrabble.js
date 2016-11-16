@@ -73,6 +73,10 @@ Player.prototype.totalScore = function() {
   return total;
 };
 
+Player.prototype.highestScoringWord = function() {
+  return this.scrabble.highestScore(this.plays);
+};
+
 
 var sarah = new Player("Sarah");
 console.log(sarah.play("cat"));
