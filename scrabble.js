@@ -51,12 +51,16 @@ Scrabble.prototype.highestScore = function(wordArr) {
   return highScoreWord;
 };
 
+var Player = function(name) {
+  this.name = name;
+};
 
-var scrabble = new Scrabble();
-console.log(scrabble.score("cat"));
-// console.log(word._word);
 
-console.log(scrabble.highestScore(["dog","a","catssss"]));
+// var scrabble = new Scrabble();
+// console.log(scrabble.score("cat"));
+// // console.log(word._word);
+//
+// console.log(scrabble.highestScore(["dog","a","catssss"]));
 
 // YOUR CODE HERE
 Scrabble.prototype.helloWorld = function() {
