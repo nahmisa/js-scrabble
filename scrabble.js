@@ -51,12 +51,12 @@ Scrabble.prototype.highestScore = function(wordArr) {
   return highScoreWord;
 };
 
-
-var Player = function(name) {
+// pass two arguments, name & scrabble so that we can have multiplayer games
+var Player = function(name, scrabble = (new Scrabble())) {
   this.name = name;
   this.plays = [];
   // Each player will have their own Scrabble
-  this.scrabble = new Scrabble();
+  this.scrabble = scrabble;
 };
 
 Player.prototype.play = function(word) {
