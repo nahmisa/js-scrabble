@@ -55,14 +55,14 @@ Scrabble.prototype.highestScore = function(wordArr) {
 var Player = function(name) {
   this.name = name;
   this.plays = [];
+  // Each player will have their own Scrabble
+  this.scrabble = new Scrabble();
 };
 
 Player.prototype.play = function(word) {
   this.word = word;
   this.plays.push(word);
-  // do we really have to make a new instance of scrabble every time???
-  scrabble = new Scrabble();
-  return scrabble.score(word);
+  return this.scrabble.score(word);
 };
 
 
