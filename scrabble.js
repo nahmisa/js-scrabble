@@ -1,13 +1,15 @@
-var Scrabble = function() {};
+var Scrabble = function() {
+  // create the hashmap
+  this.letterScore = { "a": 1, "b": 3, "c": 3, "d": 2, "e": 1, "f": 4, "g": 2,
+  "h": 4, "i": 1, "j": 8, "k": 5, "l": 1, "m": 3, "n": 1, "o": 1, "p": 3,
+  "q": 10, "r": 1, "s": 1, "t": 1, "u": 1, "v": 4, "w": 4, "x": 8, "y": 4,
+  "z": 10 };
 
-// create the hashmap
-var letterScore = { "a": 1, "b": 3, "c": 3, "d": 2, "e": 1, "f": 4, "g": 2,
-"h": 4, "i": 1, "j": 8, "k": 5, "l": 1, "m": 3, "n": 1, "o": 1, "p": 3,
-"q": 10, "r": 1, "s": 1, "t": 1, "u": 1, "v": 4, "w": 4, "x": 8, "y": 4,
-"z": 10 };
+  this.bonus_length = 7;
+  this.bonus = 50;
+};
 
-var bonus_length = 7;
-var bonus = 50;
+
 
 Scrabble.prototype.score = function(word) {
   this.word = word.toLowerCase(); // lowercase input for comparing
@@ -17,11 +19,11 @@ Scrabble.prototype.score = function(word) {
     } else {
       var score = 0;
       for(var i=0; i<this.word.length; i++) {
-        score += letterScore[this.word[i]];
+        score += this.letterScore[this.word[i]];
       }
 
-      if (this.word.length >= bonus_length) {
-        score += bonus;
+      if (this.word.length >= this.bonus_length) {
+        score += this.bonus;
       }
 
     return score;
