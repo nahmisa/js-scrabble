@@ -73,6 +73,14 @@ Player.prototype.totalScore = function() {
   return total;
 };
 
+Player.prototype.hasWon = function() {
+  if (this.totalScore() > 100) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
 Player.prototype.highestScoringWord = function() {
   return this.scrabble.highestScore(this.plays);
 };
