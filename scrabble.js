@@ -60,6 +60,9 @@ var Player = function(name) {
 };
 
 Player.prototype.play = function(word) {
+  if(this.hasWon()) {
+    return false;
+  }
   this.word = word;
   this.plays.push(word);
   return this.scrabble.score(word);
