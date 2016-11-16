@@ -69,6 +69,9 @@ Player.prototype.play = function(word) {
 };
 
 Player.prototype.totalScore = function() {
+  if (this.plays == []){
+    return 0;
+  }
   var total = 0;
   for(var i=0; i<this.plays.length; i++) {
     total += this.scrabble.score(this.plays[i]);
@@ -89,7 +92,7 @@ Player.prototype.highestScoringWord = function() {
 };
 
 Player.prototype.highestWordScore = function() {
-  return this.scrabble.score(this.highestScoringWord);
+  return this.scrabble.score(this.highestScoringWord());
 };
 
 
