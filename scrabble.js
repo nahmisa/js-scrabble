@@ -77,6 +77,12 @@ Player.prototype.highestScoringWord = function() {
   return this.scrabble.highestScore(this.plays);
 };
 
+Player.prototype.highestWordScore = function() {
+  return this.scrabble.score(this.highestScoringWord);
+};
+
+
+
 
 var sarah = new Player("Sarah");
 console.log(sarah.play("cat"));
