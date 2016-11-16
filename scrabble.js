@@ -51,6 +51,7 @@ Scrabble.prototype.highestScore = function(wordArr) {
   return highScoreWord;
 };
 
+
 var Player = function(name) {
   this.name = name;
   this.plays = [];
