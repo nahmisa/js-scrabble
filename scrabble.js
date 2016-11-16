@@ -103,6 +103,15 @@ console.log(sarah.play("cat"));
 console.log(sarah.play("dog"));
 console.log(sarah.plays);
 console.log(sarah.totalScore());
+console.log(sarah.play("dogssss"));
+console.log(sarah.play("dogssss"));
+
+console.log(sarah.totalScore());
+console.log(sarah.highestWordScore());
+console.log(sarah.highestScoringWord());
+console.log(sarah.play("frog"));
+
+
 // var scrabble = new Scrabble();
 // console.log(scrabble.score("cat"));
 // // console.log(word._word);
