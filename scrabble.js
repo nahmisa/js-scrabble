@@ -26,8 +26,8 @@ TileBag.prototype.drawTiles = function(numOfTiles) {
   for(var i=0; i<numOfTiles; i++) {
   // tiles are formatted like: [number, original index]
     var tile = sample(this.defaultTiles);
-  // get random tiles from the bag
-    this.randomTiles.push(tile);
+  // get random tiles from the bag, only push the letter to the player's tiles
+    this.randomTiles.push(tile[0]);
   // remove those tiles from the bag so they cannot be drawn again
   // the index 1 of tile is the random index that cause it to be drawn...
   // this is the index in defaultTiles
