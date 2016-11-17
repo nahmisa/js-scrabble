@@ -100,37 +100,32 @@ Player.prototype.play = function(word) {
     return false;
   }
   this.word = word;
-  this.plays.push(word);
+  this.plays.push(this.word);
 
-  this.removeTiles(word);
-  this.drawTiles(word);
+  this.removeTiles(this.word);
+  this.drawTiles();
 
   return this.scrabble.score(word);
 };
 
 Player.prototype.removeTiles = function(word) {
   this.word = word;
-  for(var i=0; i<this.word; i++) {
-    var letter = word[i];
+  for(var i=0; i<this.word.length; i++) {
+    var letter = this.word[i];
   // remove those tiles from the player's tiles so they cannot be played again
   // I think we will have to loop through all the player's tiles to find
-  // the one that matches a partiular letter.
+  // the one that matches a partiular letter. Most is 7.
   // This is less than ideal, but because things keep getting reshuffled and
   // we don't have any information from the letter about where it is in the arr.
   // this is an okay solution for now :(
-    for(var j=0; j<this.tiles.length; j++) {
-      if (letter == this.tiles[j][0]) {
-        this.tiles.splice(j,1);
-        break;
-      }
-    }
+    this.tiles.splice(this.tiles.indexOf(letter),1);
   }
   return this.tiles;
 };
 
 Player.prototype.drawTiles = function() {
   var tilesDrawn = this.scrabble.tileBag.drawTiles(this.scrabble.maxLength - this.tiles.length);
-  for(var i=0; i<tilesDrawn; i++) {
+  for(var i=0; i<tilesDrawn.length; i++) {
     this.tiles.push(tilesDrawn[i]);
   }
   return this.tiles;
