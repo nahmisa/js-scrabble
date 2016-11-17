@@ -108,6 +108,10 @@ Player.prototype.play = function(word) {
   return this.scrabble.score(word);
 };
 
+Player.prototype.hasWon = function() {
+  return this.totalScore() > 100;
+};
+
 Player.prototype.removeTiles = function(word) {
   this.word = word;
   for(var i=0; i<this.word.length; i++) {
@@ -140,10 +144,6 @@ Player.prototype.totalScore = function() {
     total += this.scrabble.score(this.plays[i]);
   }
   return total;
-};
-
-Player.prototype.hasWon = function() {
-  return this.totalScore() > 100;
 };
 
 Player.prototype.highestScoringWord = function() {
