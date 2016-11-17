@@ -143,11 +143,7 @@ Player.prototype.totalScore = function() {
 };
 
 Player.prototype.hasWon = function() {
-  if (this.totalScore() > 100) {
-    return true;
-  } else {
-    return false;
-  }
+  return this.totalScore() > 100;
 };
 
 Player.prototype.highestScoringWord = function() {
